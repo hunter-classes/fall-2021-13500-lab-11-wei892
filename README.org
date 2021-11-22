@@ -1,11 +1,8 @@
-* Fall 2021 - Lab 11
+git@github.com:hunter-classes/fall-2021-13500-lab-14-wei892.git* Fall 2021 - Lab 11
 
-* Last name:
-
-* First name:
-
-* GitHub username:
-
+* Last name: Li
+* First name: Wei Lin
+* GitHub username: wei892
 * Notes:
 
 
