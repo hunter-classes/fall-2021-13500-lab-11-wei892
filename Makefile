@@ -1,16 +1,16 @@
-main: main.o social.o social2.o
-	g++ -o main main.o social.o social2.o
+main: main.o profile.o network.o
+	g++ -o main main.o profile.o network.o
 
-tests: tests.o social.o social2.o
-	g++ -o tests tests.o social.o social2.o
+tests: tests.o profile.o network.o
+	g++ -o tests tests.o profile.o network.o
 
-main.o: main.cpp social.h social2.h
+main.o: main.cpp profile.h network.h
 
-tests.o: tests.cpp doctest.h social.h social2.h
+tests.o: tests.cpp doctest.h profile.h network.h
 
-social.o: social.cpp social.h
+profile.o: profile.cpp profile.h
 
-social2.o: social2.cpp social2.h
+network.o: network.cpp network.h
 
 clean:
 	rm -f *.o *~

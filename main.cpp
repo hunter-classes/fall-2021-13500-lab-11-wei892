@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "social.h"
-#include "social2.h"
+#include "profile.h"
+#include "network.h"
 
 int main() {
 
