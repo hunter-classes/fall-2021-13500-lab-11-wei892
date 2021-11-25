@@ -1,6 +1,7 @@
 #include "profile.h"
 #include "network.h"
 
+#include <iostream>
 #include <string>
 #include <cctype>
 
@@ -65,4 +66,35 @@ std::string isTrue(bool b){
   else {
     return "False";
   }
+}
+
+bool Network::follow(std::string usrn1, std::string usrn2){
+  if (findID(usrn1) == -1 || findID(usrn2) == -1){
+    return false;
+  }
+  //std::cout << "user1: " << usrn1 << std::endl;
+  //std::cout << "user2: " << usrn2 << std::endl;
+  following[findID(usrn1)][findID(usrn2)] = true;
+  //std::cout << usrn1 << " is following " << usrn2 << std::endl;
+  return true;
+}
+
+void Network::printDot(){
+  std::cout << "disgraph {\n";
+  for (int i = 0; i < numUsers; i++){
+    std::cout << "\t\"@" << profiles[i].getUsername() << "\"" << std::endl;
+  }
+
+  std::cout << "\n" << std::endl;
+ 
+  for (int i = 0; i < numUsers; i++){
+    for (int j = 0; j < numUsers; j++){
+      if (following[i][j] == true){
+	std::cout << "\t\"@" << profiles[i].getUsername() << "\" -> " << "\"@" << profiles[j].getUsername() << "\""<< std::endl;
+	//std::cout << "i: " << std::to_string(i) << " " << profiles[i].getUsername() << std::endl;
+	//std::cout << "j: " << std::to_string(j) << " " << profiles[j].getUsername() << "\n" << std::endl;
+      }
+    }
+  }
+  
 }
