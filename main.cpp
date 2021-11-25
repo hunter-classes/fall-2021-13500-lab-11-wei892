@@ -41,7 +41,7 @@ int main() {
   std::cout << "nw.addUser(\"mario-2\", \"Mario2\"): ";
   isPossible = nw.addUser("mario-2", "Mario2");  // false (0)
   std::cout << isPossible << " " << isTrue(isPossible) << std::endl;
-
+ 
   for(int i = 2; i < 20; i++){
     std::cout << "nw.addUser(\"mario" + std::to_string(i) + "\", \"Mario" + std::to_string(i) + "\"): ";
     isPossible = nw.addUser("mario" + std::to_string(i),

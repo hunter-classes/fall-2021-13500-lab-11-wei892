@@ -17,7 +17,13 @@ int Network::findID(std::string usern){
 }
 
 Network::Network(){
-  int numusers = 0;
+  numUsers = 0;
+
+  for (int i = 0; i < MAX_USERS; i++){
+    for (int j = 0; j < MAX_USERS; j++){
+      following[i][j] = false;
+    }
+  }
 }
 
 bool Network::addUser(std::string usern, std::string dspn){
@@ -25,12 +31,16 @@ bool Network::addUser(std::string usern, std::string dspn){
   if (numUsers == 20){
     return false;
   }
-
+  /*
   for (int i = 0; i < MAX_USERS; i++){
     //if there is matching usernames
     if (usern == profiles[i].getUsername()){
       return false;
     }
+  }
+  */
+  if (findID(usern) != -1){
+    return false;
   }
 
   //checks if alphanum
