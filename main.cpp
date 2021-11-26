@@ -84,6 +84,41 @@ int main() {
   // additionally, make @mario2 follow @luigi
   nw2.follow("mario2", "luigi");
   nw2.printDot();
-  
+
+  //==============================
+  std::cout << "\n==============================\n" << std::endl;
+  std::cout << "==========Part D==========" << std::endl;
+
+  Network nw3;
+  // add three users
+  nw3.addUser("mario", "Mario");
+  nw3.addUser("luigi", "Luigi");
+  nw3.addUser("yoshi", "Yoshi");
+
+  nw3.follow("mario", "luigi");
+  nw3.follow("luigi", "mario");
+  nw3.follow("luigi", "yoshi");
+  nw3.follow("yoshi", "mario");
+
+  // write some posts
+  nw3.writePost("mario", "It's a-me, Mario!");
+  nw3.writePost("luigi", "Hey hey!");
+  nw3.writePost("mario", "Hi Luigi!");
+  nw3.writePost("yoshi", "Test 1");
+  nw3.writePost("yoshi", "Test 2");
+  nw3.writePost("luigi", "I just hope this crazy plan of yours works!");
+  nw3.writePost("mario", "My crazy plans always work!");
+  nw3.writePost("yoshi", "Test 3");
+  nw3.writePost("yoshi", "Test 4");
+  nw3.writePost("yoshi", "Test 5");
+
+  std::cout << std::endl;
+  std::cout << "======= Mario's timeline =======" << std::endl;
+  nw3.printTimeline("mario");
+  std::cout << std::endl;
+
+  std::cout << "======= Yoshi's timeline =======" << std::endl;
+  nw3.printTimeline("yoshi");
+  std::cout << std::endl;
   return 0;
 }

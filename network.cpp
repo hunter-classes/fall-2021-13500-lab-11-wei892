@@ -25,6 +25,8 @@ Network::Network(){
       following[i][j] = false;
     }
   }
+
+  numPosts = 0;
 }
 
 bool Network::addUser(std::string usern, std::string dspn){
@@ -95,6 +97,55 @@ void Network::printDot(){
 	//std::cout << "j: " << std::to_string(j) << " " << profiles[j].getUsername() << "\n" << std::endl;
       }
     }
+  }  
+
+  std::cout << "}" << std::endl;
+}
+
+
+
+bool Network::writePost(std::string usrn, std::string msg){
+  if (numPosts == 100){
+    return false;
   }
   
+  if (findID(usrn) == -1){
+    return false;
+  }
+
+  Post newPost = {usrn, msg}; 
+  posts[numPosts] = newPost;
+  numPosts++;
+  return true;
+}
+
+
+bool Network::printTimeline(std::string usrn){
+  //for (int i = numPosts-1; i >= 0; i--){
+  //std::cout << std::to_string(i) << std::endl;
+  //}
+  //return true;
+  if (findID(usrn) == -1){
+    return false;
+  }
+
+  int x = findID(usrn);
+  
+  for (int i = numPosts-1; i >= 0; i--){
+    int y = findID(posts[i].username);
+
+    if (following[x][y] == true || posts[i].username == usrn){
+      //print out their own posts
+      //print the person they follow posts
+      std::string m = posts[i].message;
+      std::cout << profiles[findID(posts[i].username)].getFullName() << ": " << m << std::endl;
+    }
+    
+    
+    
+    //std::string m = posts[i].message;
+    //std::cout << profiles[findID(posts[i].username)].getFullName() << ": " << m << std::endl;
+  }
+  
+  return true;
 }

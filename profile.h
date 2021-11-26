@@ -17,6 +17,9 @@ public:
   // Return username
   std::string getUsername();
 
+  //Return the displayname
+  std::string getDisplayname();
+  
   // Return name in the format: "displayname (@username)"
   std::string getFullName();
 

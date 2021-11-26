@@ -15,8 +15,12 @@ std::string Profile::getUsername(){
   return username;
 }
 
+std::string Profile::getDisplayname(){
+  return displayname;
+}
+
 std::string Profile::getFullName(){
-  std::string output = "\"" + displayname + " (@" + username + ")\"";
+  std::string output = displayname + " (@" + username + ")";
   return output;
 }
 
