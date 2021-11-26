@@ -1,3 +1,14 @@
+/*
+Name: Wei Lin Li
+Course: CSCI-135
+Instructor: Tong Yi and Mike Zamansky
+Assignment: Lab11
+
+this is the header file for the profile functions
+it contains the profile class
+*/
+
+
 #pragma once
 #include <string>
 

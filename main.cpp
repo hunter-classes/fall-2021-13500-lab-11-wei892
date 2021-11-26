@@ -1,3 +1,13 @@
+/*
+Name: Wei Lin Li
+Course: CSCI-135
+Instructor: Tong Yi and Mike Zamansky
+Assignment: Lab 11
+
+this is the main function that will run all the functions of each part of the lab
+
+*/
+
 #include <iostream>
 
 #include "profile.h"
