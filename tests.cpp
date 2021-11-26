@@ -1,5 +1,13 @@
 //test file
+/*
+Name: Wei Lin Li
+Course: CSCI-135
+Instructor: Tong Yi and Mike Zamansky
+Assignment: Lab 11
 
+this is the test file for this lab
+
+*/
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
